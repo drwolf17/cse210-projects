@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Resume myResume = new Resume();
         Job job1 = new Job();
         Job job2 = new Job();
 
@@ -17,8 +18,13 @@ class Program
         job2._startYear = 2022;
         job2._endYear = 2023;
 
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
+
         job1.Display();
         job2.Display();
+
+        Console.WriteLine(myResume._jobs[0]._jobTitle);
 
     }
 }
