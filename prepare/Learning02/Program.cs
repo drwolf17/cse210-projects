@@ -22,9 +22,6 @@ class Program
         myResume._jobs.Add(job2);
         myResume._name = "Daniel Wolf";
 
-        job1.Display();
-        job2.Display();
-
         myResume.Display();
 
 
