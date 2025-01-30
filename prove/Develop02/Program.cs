@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -15,7 +16,11 @@ class Program
         journal._entryLogFile = "JournalLog.csv";
         journal._prompts.Add("Test1");
         journal._prompts.Add("Test2");
+
         entry.DisplayTest();
         journal.DisplayTest();
+
+        journal.Display();
+
     }
 }
