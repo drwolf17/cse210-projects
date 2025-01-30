@@ -17,9 +17,7 @@ class Program
         journal._prompts.Add("Test1");
         journal._prompts.Add("Test2");
 
-        entry.DisplayTest();
-        journal.DisplayTest();
-
+        journal.NewEntry("Test Prompt");
         journal.Display();
 
     }

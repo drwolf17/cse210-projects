@@ -23,4 +23,23 @@ public class Journal
             Console.WriteLine(parts[2]);
         }
     }
+
+    public void NewEntry(string prompt)
+    {
+        Entry entry = new Entry();
+        DateTime currentTime = DateTime.Now;
+
+        entry._date = currentTime.ToShortDateString();
+        entry._prompt = prompt;
+
+        Console.WriteLine(entry._prompt);
+        entry._entry = Console.ReadLine();
+
+        using (StreamWriter outputFile = new StreamWriter(_entryLogFile))
+        {
+            outputFile.Write(entry._date + "~");
+            outputFile.Write(entry._prompt + "~");
+            outputFile.Write(entry._entry);
+        }
+    }
 }
