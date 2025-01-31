@@ -14,10 +14,12 @@ class Program
         entry._entry = "entry test";
 
         journal._entryLogFile = "JournalLog.csv";
-        journal._prompts.Add("Test1");
-        journal._prompts.Add("Test2");
+        journal._prompts.Add("Prompt Test1");
+        journal._prompts.Add("Prompt Test2");
 
-        journal.NewEntry("Test Prompt");
+        string prompt = journal.GeneratePrompt();
+
+        journal.NewEntry(prompt);
         journal.Display();
 
     }

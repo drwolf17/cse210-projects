@@ -1,4 +1,6 @@
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 
 public class Journal
 {
@@ -41,5 +43,15 @@ public class Journal
             outputFile.Write(entry._prompt + "~");
             outputFile.Write(entry._entry);
         }
+    }
+
+    public string GeneratePrompt()
+    {
+        Random randomGen = new Random();
+        
+        int promptNumber = randomGen.Next(1, _prompts.Count);
+        string prompt = _prompts[promptNumber];
+
+        return prompt;
     }
 }
