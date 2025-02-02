@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-
 class Program
 {
     static void Main(string[] args)
@@ -13,7 +10,7 @@ class Program
         entry._date = currentTime.ToShortDateString() + " test";
         entry._entry = "entry test";
 
-        journal._userFile = "test.txt";
+
         journal._prompts.Add("Prompt Test1");
         journal._prompts.Add("Prompt Test2");
         journal._prompts.Add("Prompt Test3");
@@ -31,6 +28,10 @@ class Program
 
         journal.NewEntry(prompt);
 
+        journal.Display();
+
+        Console.WriteLine("Loading Test");
+        journal.Load("test.txt");
 
         journal.Display();
 

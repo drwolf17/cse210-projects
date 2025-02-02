@@ -1,8 +1,6 @@
-using System.IO;
-
 public class Journal
 {
-    public string _userFile;
+    public string _defaultPath;
     public List<string> _prompts = new List<string>();
     public List<Entry> _entries = new List<Entry>();
 
@@ -15,17 +13,24 @@ public class Journal
         }
     }
 
-    // public void Display()
-    // {
-    //     string[] lines = System.IO.File.ReadAllLines(_entryLogFile);
+    public void Load(string file)
+    {
+        string[] lines = System.IO.File.ReadAllLines(file);
 
-    //     foreach (string line in lines)
-    //     {
-    //         string[] parts = line.Split('~');
-    //         Console.WriteLine($"Date: {parts[0]} - Prompt: {parts[1]}");
-    //         Console.WriteLine(parts[2]);
-    //     }
-    // }
+        _entries.Clear();
+
+        foreach (string line in lines)
+        {
+            Entry entry = new Entry();
+            string[] parts = line.Split('~');
+            entry._date = parts[0];
+            entry._prompt = parts[1];
+            entry._entry = parts[2];
+
+            _entries.Add(entry);
+            
+        }
+    }
 
     public void NewEntry(string prompt)
     {
