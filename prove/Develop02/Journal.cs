@@ -29,7 +29,6 @@ public class Journal
             entry._entry = parts[2];
 
             _entries.Add(entry);
-            
         }
     }
 
@@ -45,9 +44,6 @@ public class Journal
         entry._entry = Console.ReadLine();
 
         _entries.Add(entry);
-        
-
-
     }
 
     public void Save(string file)
