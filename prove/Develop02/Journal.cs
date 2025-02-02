@@ -1,11 +1,10 @@
 using System.IO;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography;
 
 public class Journal
 {
     public string _entryLogFile;
     public List<string> _prompts = new List<string>();
+
     public void DisplayTest()
     {
         Console.WriteLine(_entryLogFile);
@@ -37,11 +36,24 @@ public class Journal
         Console.WriteLine(entry._prompt);
         entry._entry = Console.ReadLine();
 
+        string[] lines = System.IO.File.ReadAllLines(_entryLogFile);
+
         using (StreamWriter outputFile = new StreamWriter(_entryLogFile))
         {
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split('~');
+                outputFile.Write(parts[0] + "~");
+                outputFile.Write(parts[1] + "~");
+                outputFile.Write(parts[2]);
+                outputFile.WriteLine();
+            }
+
             outputFile.Write(entry._date + "~");
             outputFile.Write(entry._prompt + "~");
             outputFile.Write(entry._entry);
+            outputFile.WriteLine("");
+
         }
     }
 
@@ -49,7 +61,7 @@ public class Journal
     {
         Random randomGen = new Random();
         
-        int promptNumber = randomGen.Next(1, _prompts.Count);
+        int promptNumber = randomGen.Next(0, _prompts.Count);
         string prompt = _prompts[promptNumber];
 
         return prompt;
