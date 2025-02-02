@@ -1,6 +1,6 @@
 public class Journal
 {
-    public string _defaultPath;
+
     public List<string> _prompts = new List<string>();
     public List<Entry> _entries = new List<Entry>();
 
@@ -46,17 +46,22 @@ public class Journal
         _entries.Add(entry);
         
 
-        // using (StreamWriter outputFile = new StreamWriter(_entryLogFile))
-        // {
 
-        //     outputFile.Write(entry._date + "~");
-        //     outputFile.Write(entry._prompt + "~");
-        //     outputFile.Write(entry._entry);
-        //     outputFile.WriteLine("");
-
-        // }
     }
 
+    public void Save(string file)
+    {
+        using (StreamWriter outputFile = new StreamWriter(file))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputFile.Write(entry._date + "~");
+                outputFile.Write(entry._prompt + "~");
+                outputFile.Write(entry._entry);
+                outputFile.WriteLine("");
+            }
+        }
+    }
     public string GeneratePrompt()
     {
         Random randomGen = new Random();

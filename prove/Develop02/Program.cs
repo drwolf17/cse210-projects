@@ -6,10 +6,6 @@ class Program
         Journal journal = new Journal();
         DateTime currentTime = DateTime.Now;
 
-        entry._prompt = "prompt test";
-        entry._date = currentTime.ToShortDateString() + " test";
-        entry._entry = "entry test";
-
 
         journal._prompts.Add("Prompt Test1");
         journal._prompts.Add("Prompt Test2");
@@ -24,11 +20,14 @@ class Program
 
         journal.NewEntry(prompt);
 
-        prompt = journal.GeneratePrompt();
+        // prompt = journal.GeneratePrompt();
 
-        journal.NewEntry(prompt);
+        // journal.NewEntry(prompt);
 
         journal.Display();
+
+        Console.WriteLine("Saving Test");
+        journal.Save("test.txt");
 
         Console.WriteLine("Loading Test");
         journal.Load("test.txt");
