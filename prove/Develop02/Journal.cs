@@ -2,28 +2,30 @@ using System.IO;
 
 public class Journal
 {
-    public string _entryLogFile;
+    public string _userFile;
     public List<string> _prompts = new List<string>();
+    public List<Entry> _entries = new List<Entry>();
 
-    public void DisplayTest()
-    {
-        Console.WriteLine(_entryLogFile);
-        foreach (string prompt in _prompts)
-        {
-            Console.WriteLine(prompt);
-        }
-    }
     public void Display()
     {
-        string[] lines = System.IO.File.ReadAllLines(_entryLogFile);
-
-        foreach (string line in lines)
+        foreach (Entry entry in _entries)
         {
-            string[] parts = line.Split('~');
-            Console.WriteLine($"Date: {parts[0]} - Prompt: {parts[1]}");
-            Console.WriteLine(parts[2]);
+            Console.WriteLine($"Date: {entry._date} - Prompt: {entry._prompt}");
+            Console.WriteLine(entry._entry);
         }
     }
+
+    // public void Display()
+    // {
+    //     string[] lines = System.IO.File.ReadAllLines(_entryLogFile);
+
+    //     foreach (string line in lines)
+    //     {
+    //         string[] parts = line.Split('~');
+    //         Console.WriteLine($"Date: {parts[0]} - Prompt: {parts[1]}");
+    //         Console.WriteLine(parts[2]);
+    //     }
+    // }
 
     public void NewEntry(string prompt)
     {
@@ -36,25 +38,18 @@ public class Journal
         Console.WriteLine(entry._prompt);
         entry._entry = Console.ReadLine();
 
-        string[] lines = System.IO.File.ReadAllLines(_entryLogFile);
+        _entries.Add(entry);
+        
 
-        using (StreamWriter outputFile = new StreamWriter(_entryLogFile))
-        {
-            foreach (string line in lines)
-            {
-                string[] parts = line.Split('~');
-                outputFile.Write(parts[0] + "~");
-                outputFile.Write(parts[1] + "~");
-                outputFile.Write(parts[2]);
-                outputFile.WriteLine();
-            }
+        // using (StreamWriter outputFile = new StreamWriter(_entryLogFile))
+        // {
 
-            outputFile.Write(entry._date + "~");
-            outputFile.Write(entry._prompt + "~");
-            outputFile.Write(entry._entry);
-            outputFile.WriteLine("");
+        //     outputFile.Write(entry._date + "~");
+        //     outputFile.Write(entry._prompt + "~");
+        //     outputFile.Write(entry._entry);
+        //     outputFile.WriteLine("");
 
-        }
+        // }
     }
 
     public string GeneratePrompt()

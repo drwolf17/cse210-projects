@@ -13,7 +13,7 @@ class Program
         entry._date = currentTime.ToShortDateString() + " test";
         entry._entry = "entry test";
 
-        journal._entryLogFile = "JournalLog.txt";
+        journal._userFile = "test.txt";
         journal._prompts.Add("Prompt Test1");
         journal._prompts.Add("Prompt Test2");
         journal._prompts.Add("Prompt Test3");
@@ -24,6 +24,10 @@ class Program
         journal._prompts.Add("Prompt Test8");
 
         string prompt = journal.GeneratePrompt();
+
+        journal.NewEntry(prompt);
+
+        prompt = journal.GeneratePrompt();
 
         journal.NewEntry(prompt);
 
