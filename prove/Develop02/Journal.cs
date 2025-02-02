@@ -10,6 +10,7 @@ public class Journal
         {
             Console.WriteLine($"Date: {entry._date} - Prompt: {entry._prompt}");
             Console.WriteLine(entry._entry);
+            Console.WriteLine("");
         }
     }
 
@@ -32,13 +33,13 @@ public class Journal
         }
     }
 
-    public void NewEntry(string prompt)
+    public void NewEntry()
     {
         Entry entry = new Entry();
         DateTime currentTime = DateTime.Now;
 
         entry._date = currentTime.ToShortDateString();
-        entry._prompt = prompt;
+        entry._prompt = GeneratePrompt();
 
         Console.WriteLine(entry._prompt);
         entry._entry = Console.ReadLine();
