@@ -63,6 +63,7 @@ public class Journal
             }
         }
     }
+
     public string GeneratePrompt()
     {
         Random randomGen = new Random();

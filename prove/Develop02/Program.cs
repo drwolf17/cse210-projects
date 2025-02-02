@@ -42,6 +42,65 @@ class Program
                     journal.Display();
                 }
             }
+            else if (userSelection == "3")
+            {
+                Console.WriteLine("Please select a file");
+                Console.Write(">>");
+                string loadFile = Console.ReadLine();
+
+                if (System.IO.Path.Exists(loadFile))
+                {
+                    journal.Load(loadFile);
+                    Console.WriteLine($"{loadFile} successfully loaded");
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine($"The file {loadFile} does not exist.");
+                    Console.WriteLine("");
+                }
+            }
+            else if (userSelection == "4")
+            {
+                Console.WriteLine("Please select a file");
+                Console.Write(">>");
+                string saveFile = Console.ReadLine();
+
+                if (System.IO.Path.Exists(saveFile))
+                {
+                    Console.WriteLine($"Saving will overwrite the contents of {saveFile}. Type 1 if you are sure");
+                    Console.Write(">>");
+                    string overwriteSave = Console.ReadLine();
+
+                    if (overwriteSave == "1")
+                    {
+                    journal.Save(saveFile);
+                    Console.WriteLine($"Entries have been successfully saved to {saveFile}");
+                    Console.WriteLine("");
+                    }
+                }
+                else
+                {
+                    journal.Save(saveFile);
+                    Console.WriteLine($"Entries have been successfully saved to {saveFile}");
+                    Console.WriteLine("");
+                }               
+            }
+            else if (userSelection == "5")
+            {
+                Console.WriteLine("Unsave entries will be lost. Type 1 if you still wish to exit the program");
+                Console.Write(">>");
+                string exitDecision = Console.ReadLine();
+
+                if (exitDecision == "1")
+                {
+                    Console.WriteLine("Goodbye");
+                }
+                else
+                {
+                    userSelection = "";
+                }
+            }
         }
 
 
