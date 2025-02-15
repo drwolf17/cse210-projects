@@ -22,4 +22,9 @@ public class ScriptureWord
         _word = word;
     }
 
+    public void DisplayWord()
+    {
+        Console.Write(_word + " ");
+    }
+
 }
