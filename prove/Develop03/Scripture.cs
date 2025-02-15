@@ -75,7 +75,7 @@ public class Scripture
 
                 if (_words[randomNumber].GetIsHidden() == false)
                 {
-                    _words[randomNumber].SetIsHidden(true);
+                    _words[randomNumber].MakeUnderscores();
                 }
 
                 else
