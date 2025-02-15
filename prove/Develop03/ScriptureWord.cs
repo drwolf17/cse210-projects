@@ -27,4 +27,16 @@ public class ScriptureWord
         Console.Write(_word + " ");
     }
 
+    public void MakeUnderscores()
+    {
+        string wordAsUnderscores = "";
+
+        while (wordAsUnderscores.Length < _word.Length)
+        {
+            wordAsUnderscores += "_";
+        }
+
+        _word = wordAsUnderscores;
+    }
+
 }

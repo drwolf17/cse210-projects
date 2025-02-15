@@ -8,5 +8,8 @@ class Program
 
         testWord.DisplayWord();
 
+        testWord.MakeUnderscores();
+        testWord.DisplayWord();
+
     }
 }
