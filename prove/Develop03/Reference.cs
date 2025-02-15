@@ -5,14 +5,6 @@ public class Reference
     private int _firstVerse;
     private int _lastVerse;
 
-    public Reference()
-    {
-        _book = "";
-        _chapter = 1;
-        _firstVerse = 0;
-        _lastVerse = 0;
-    }
-
     public Reference(string book)
     {
         _book = book;
