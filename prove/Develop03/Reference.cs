@@ -8,7 +8,7 @@ public class Reference
     public Reference()
     {
         _book = "";
-        _chapter = 0;
+        _chapter = 1;
         _firstVerse = 0;
         _lastVerse = 0;
     }
@@ -16,7 +16,7 @@ public class Reference
     public Reference(string book)
     {
         _book = book;
-        _chapter = 0;
+        _chapter = 1;
         _firstVerse = 0;
         _lastVerse = 0;
     }
@@ -83,5 +83,21 @@ public class Reference
     public void SetLast(int last)
     {
         _lastVerse = last;
+    }
+
+    public void DisplayReference()
+    {
+        if (_lastVerse > 0 && _lastVerse > _firstVerse)
+            Console.WriteLine($"{_book} {_chapter}:{_firstVerse}-{_lastVerse} ");
+        
+        else if (_firstVerse > 0)
+        {
+            Console.WriteLine($"{_book} {_chapter}:{_firstVerse} ");
+        }
+
+        else 
+        {
+            Console.WriteLine($"{_book} {_chapter} ");
+        }
     }
 }
