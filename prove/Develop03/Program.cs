@@ -4,16 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        ScriptureWord testWord = new ScriptureWord("test");
-        Reference testReference1 = new Reference("Enos");
-        Reference testReference2 = new Reference("Moroni", 3);
-        Reference testReference3 = new Reference("1 Nephi", 10, 4);
-        Reference testReference4 = new Reference("Jacob", 3, 2, 5);
+        Reference testReference = new Reference("Jacob", 3, 2);
+        Scripture testScripture = new Scripture("O all ye that are pure in heart, lift up your heads and receive the pleasing word of God, and feast upon his love; for ye may, if your minds are firm, forever.");
 
-        testReference1.DisplayReference();
-        testReference2.DisplayReference();
-        testReference3.DisplayReference();
-        testReference4.DisplayReference();
+
+        testReference.DisplayReference();
+        testScripture.DisplayScripture();
+
+        testScripture.RandomHide(3);
+        testScripture.DisplayScripture();
 
 
     }
