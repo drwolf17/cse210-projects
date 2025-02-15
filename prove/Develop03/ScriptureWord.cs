@@ -1,6 +1,11 @@
 public class ScriptureWord
 {
     private string _word;
+
+    // flag for making sure the same
+    // word isn't hidden twice and
+    // to be able to check when every 
+    // word is hidden.
     private bool _isHidden;
 
     public ScriptureWord()
@@ -35,11 +40,15 @@ public class ScriptureWord
         _isHidden = hiddeness;
     }
 
+    // have this so each time it also adds the space.
     public void DisplayWord()
     {
         Console.Write(_word + " ");
     }
 
+    // changes _word to be all underscores
+    // and checks the flag that it is hidden
+    // for RandomHide() in the Scripture class.
     public void MakeUnderscores()
     {
         string wordAsUnderscores = "";
