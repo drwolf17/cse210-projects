@@ -77,6 +77,14 @@ public class Reference
         _lastVerse = last;
     }
 
+    // Displays the whole scripture reference and if 
+    // the scripture reference is not complete (ie missing
+    // one of the verses) or is not possible (ie the last verse
+    // is lower than the first verse) it will not show the verse
+    // causing the error (ie not displaying the last verse if
+    // it is higher than the first or if there was none inputted
+    // and not displaying the first or last verse if there was 
+    // no verses inputted.
     public void DisplayReference()
     {
         if (_lastVerse > 0 && _lastVerse > _firstVerse)
