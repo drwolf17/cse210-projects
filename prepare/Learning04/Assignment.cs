@@ -5,8 +5,8 @@ public class Assignment
 
     public Assignment(string name, string topic)
     {
-        name = _studentName;
-        topic = _topic;
+        _studentName = name;
+        _topic = topic;
     }
 
     public string GetSummary()
