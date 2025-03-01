@@ -25,4 +25,18 @@ public class Mindfulness
         Console.WriteLine("How long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
     }
+
+    public void WaitAnimtion(int duration)
+    {
+        for (int i = 0; i < duration; i++)
+        {
+            Console.Write("+");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+
+            Console.Write("x");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+        }
+    }
 }
