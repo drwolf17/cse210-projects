@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        Mindfulness mindfulness = new Mindfulness("Breathing", "Ex. description");
+
+        mindfulness.GenericGreeting();
     }
 }
+
+
