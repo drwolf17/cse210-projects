@@ -4,11 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Mindfulness mindfulness = new Mindfulness("Breathing", "Ex. description");
+        Breathing breathing = new Breathing();
 
-        mindfulness.GenericGreeting();
-        mindfulness.DurationPrompt();
-        mindfulness.GenericEnding();
+        breathing.BreathingMethod();
     }
 }
 
