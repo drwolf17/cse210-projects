@@ -7,6 +7,7 @@ class Program
         Mindfulness mindfulness = new Mindfulness("Breathing", "Ex. description");
 
         mindfulness.GenericGreeting();
+        mindfulness.DurationPrompt();
     }
 }
 
