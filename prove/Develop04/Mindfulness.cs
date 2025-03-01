@@ -39,4 +39,14 @@ public class Mindfulness
             Console.Write("\b \b");
         }
     }
+
+    public void GenericEnding()
+    {
+        Console.WriteLine("Well Done!");
+        WaitAnimtion(3);
+        Console.WriteLine("");
+
+        Console.WriteLine($"You have completed {_duration} seconds of the {_activityName} activity.");
+        WaitAnimtion(5);
+    }
 }
