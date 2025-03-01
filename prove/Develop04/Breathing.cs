@@ -20,6 +20,7 @@ public class Breathing : Mindfulness
             Console.WriteLine("");
         }
 
+        Console.WriteLine("");
         GenericEnding();
     }
     public void BreathInOut(int breathIn, int breathOut)
