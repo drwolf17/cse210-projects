@@ -8,6 +8,7 @@ class Program
 
         mindfulness.GenericGreeting();
         mindfulness.DurationPrompt();
+        mindfulness.WaitAnimtion(5);
     }
 }
 
