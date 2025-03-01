@@ -19,4 +19,10 @@ public class Mindfulness
         Console.WriteLine(_description);
         Console.WriteLine("");
     }
+
+    public void DurationPrompt()
+    {
+        Console.WriteLine("How long, in seconds, would you like for your session? ");
+        _duration = int.Parse(Console.ReadLine());
+    }
 }
