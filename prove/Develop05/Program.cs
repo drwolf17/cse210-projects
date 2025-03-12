@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        SimpleGoal simpleGoal = new SimpleGoal("Test title", "Test desc", 50, true);
+
+        simpleGoal.DisplayGoal();
     }
 }
