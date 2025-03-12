@@ -15,7 +15,7 @@ public class ChecklistGoal : Goals
     {
         if (_timesCompleted >= _goalEnd)
         {
-            Console.Write("[X]");
+            Console.Write("[X] ");
         }
         else
         {
