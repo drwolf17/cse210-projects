@@ -17,4 +17,9 @@ public abstract class Goals
     // for each goal and it will get a list of each of the attributes needed
     // to create the class without having to check what the type of goal is
     public abstract List<string> ListAttributes();
+
+    public int GetValue()
+    {
+        return _goalValue;
+    }
 }
