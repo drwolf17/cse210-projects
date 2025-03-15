@@ -27,4 +27,11 @@ public class EternalGoal : Goals
 
         return attributes;
     }
+
+    public override int RecordEvent()
+    {
+        _timesCompleted++;
+
+        return _goalValue;
+    }
 }

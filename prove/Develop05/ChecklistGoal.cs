@@ -39,4 +39,28 @@ public class ChecklistGoal : Goals
 
         return attributes;
     }
+
+    public override int RecordEvent()
+    {
+        _timesCompleted++;
+
+        if (_timesCompleted > _goalEnd)
+        {
+            _timesCompleted--;
+
+            Console.WriteLine("This goal has already been completed");
+
+            return 0;
+        }
+
+        else if (_timesCompleted == _goalEnd)
+        {
+            return _goalValue + _goalBonus;
+        }
+
+        else
+        {
+            return _goalValue;
+        }
+    }
 }

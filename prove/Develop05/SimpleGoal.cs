@@ -34,4 +34,21 @@ public class SimpleGoal : Goals
 
         return attributes;
     }
+
+    public override int RecordEvent()
+    {
+        if (_goalCompleted)
+        {
+            Console.WriteLine("You have already completed this goal.");
+
+            return 0;
+        }
+
+        else
+        {
+            _goalCompleted = true;
+
+            return _goalValue;
+        }
+    }
 }

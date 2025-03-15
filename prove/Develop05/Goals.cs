@@ -18,8 +18,5 @@ public abstract class Goals
     // to create the class without having to check what the type of goal is
     public abstract List<string> ListAttributes();
 
-    public int GetValue()
-    {
-        return _goalValue;
-    }
+    public abstract int RecordEvent();
 }
