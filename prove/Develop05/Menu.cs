@@ -14,6 +14,7 @@ public class Menu
     {
         
     }
+
     public void Load(string file)
     {
         string[] lines = System.IO.File.ReadAllLines(file);
@@ -24,7 +25,7 @@ public class Menu
         {
 
             string[] parts = line.Split('~');
-            
+
             if (parts[0] == "SimpleGoal")
             {
                 SimpleGoal simpleGoal = new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]), bool.Parse(parts[4]));
@@ -46,6 +47,27 @@ public class Menu
             else
             {
                 _score = int.Parse(parts[0]);
+            }
+        }
+    }
+
+    public void Save(string file)
+    {
+        using (StreamWriter outputFile = new StreamWriter(file))
+        {
+            outputFile.Write(_score);
+
+            foreach (Goals goal in _goals)
+            {
+                outputFile.WriteLine("");
+                List<string> items = goal.ListAttributes();
+
+                foreach (string item in items)
+                {
+                    outputFile.WriteLine(item + "~");
+                }
+
+                outputFile.Write("\b ");
             }
         }
     }
