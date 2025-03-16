@@ -55,7 +55,7 @@ public class Menu
     {
         using (StreamWriter outputFile = new StreamWriter(file))
         {
-            outputFile.Write(_score);
+            outputFile.WriteLine(_score);
 
             foreach (Goals goal in _goals)
             {
