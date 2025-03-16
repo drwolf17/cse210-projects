@@ -33,6 +33,7 @@ public class ChecklistGoal : Goals
             _goalTitle,
             _goalDesc,
             _goalValue.ToString(),
+            _goalBonus.ToString(),
             _timesCompleted.ToString(),
             _goalEnd.ToString()
         ];
