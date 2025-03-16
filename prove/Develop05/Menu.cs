@@ -77,8 +77,12 @@ public class Menu
         }
     }
 
-    public void Load(string file)
+    public void Load()
     {
+        Console.WriteLine("Please enter the name of the file you would like to load.");
+        Console.Write(">>");
+        string file = Console.ReadLine();
+
         string[] lines = System.IO.File.ReadAllLines(file);
 
         _goals.Clear();
@@ -113,8 +117,12 @@ public class Menu
         }
     }
 
-    public void Save(string file)
+    public void Save()
     {
+        Console.WriteLine("Please enter the name of the file that will be saved.");
+        Console.Write(">>");
+        string file = Console.ReadLine();
+        
         using (StreamWriter outputFile = new StreamWriter(file))
         {
             outputFile.WriteLine(_score);
