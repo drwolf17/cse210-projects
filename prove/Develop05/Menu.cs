@@ -28,11 +28,6 @@ public class Menu
         return userSelection;
     }
 
-    public int GetScore()
-    {
-        return _score;
-    }
-
     public void Load(string file)
     {
         string[] lines = System.IO.File.ReadAllLines(file);
