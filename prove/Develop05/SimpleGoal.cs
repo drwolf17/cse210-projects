@@ -23,16 +23,15 @@ public class SimpleGoal : Goals
         Console.WriteLine("");
     }
 
-    public override List<string> ListAttributes()
+    public override string SaveGoal()
     {
-        List<string> attributes =
-        [
-            "SimpleGoal",
-            _goalTitle,
-            _goalDesc,
-            _goalValue.ToString(),
-            _goalCompleted.ToString(),
-        ];
+        string attributes =
+        
+            "SimpleGoal" + "~" +
+            _goalTitle + "~" +
+            _goalDesc + "~" +
+            _goalValue.ToString() + "~" +
+            _goalCompleted.ToString();
 
         return attributes;
     }

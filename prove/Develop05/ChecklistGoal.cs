@@ -27,18 +27,18 @@ public class ChecklistGoal : Goals
         Console.WriteLine("");
     }
 
-    public override List<string> ListAttributes()
+    public override string SaveGoal()
     {
-        List<string> attributes =
-        [
-            "ChecklistGoal",
-            _goalTitle,
-            _goalDesc,
-            _goalValue.ToString(),
-            _goalBonus.ToString(),
-            _timesCompleted.ToString(),
-            _goalEnd.ToString()
-        ];
+        string attributes =
+        
+            "ChecklistGoal" + "~" +
+            _goalTitle + "~" +
+            _goalDesc + "~" +
+            _goalValue.ToString() + "~" +
+            _goalBonus.ToString() + "~" +
+            _timesCompleted.ToString() + "~" +
+            _goalEnd.ToString();
+        
 
         return attributes;
     }

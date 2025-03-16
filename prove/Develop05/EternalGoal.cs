@@ -16,16 +16,16 @@ public class EternalGoal : Goals
         Console.WriteLine("");
     }
     
-    public override List<string> ListAttributes()
+    public override string SaveGoal()
     {
-        List<string> attributes =
-        [
-            "EternalGoal",
-            _goalTitle,
-            _goalDesc,
-            _goalValue.ToString(),
-            _timesCompleted.ToString(),
-        ];
+        string attributes =
+        
+            "EternalGoal" + "~" +
+            _goalTitle + "~" +
+            _goalDesc + "~" +
+            _goalValue.ToString() + "~" +
+            _timesCompleted.ToString();
+        
 
         return attributes;
     }
