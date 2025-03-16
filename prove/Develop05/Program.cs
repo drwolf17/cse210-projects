@@ -6,7 +6,43 @@ class Program
     {
         Menu menu = new Menu();
 
-        menu.Load("goalsSaveTest.txt");
-        menu.DisplayGoals();
+        bool isRunning = true;
+        int userSelection;
+
+        while (isRunning)
+        {
+            userSelection = menu.GiveOptions();
+
+            if (userSelection == 1)
+            {
+                menu.CreateGoal();
+            }
+
+            else if (userSelection == 2)
+            {
+                menu.DisplayGoals();
+            }
+
+            else if (userSelection == 3)
+            {
+                menu.Save();
+            }
+
+            else if (userSelection == 4)
+            {
+                menu.Load();
+            }
+
+            else if (userSelection == 5)
+            {
+                menu.RecordEvent();
+            }
+
+            else if (userSelection == 6)
+            {
+                isRunning = false;
+            }
+
+        }
     }
 }
