@@ -1,18 +1,36 @@
 public class Menu
 {
-    private bool _isRunning;
+
     private int _score;
     private List<Goals> _goals = new List<Goals>();
 
     public Menu()
     {
-        _isRunning = true;
         _score = 0;
     }
 
-    public void GiveOptions()
+    public int GiveOptions()
     {
+        Console.WriteLine($"You have {_score} points.");
+        Console.WriteLine("");
+        Console.WriteLine("    Menu Options:");
+        Console.WriteLine("----------------------");
+        Console.WriteLine("1. Create New Goal");
+        Console.WriteLine("2. List Goals");
+        Console.WriteLine("3. Save Goals");
+        Console.WriteLine("4. Load Goals");
+        Console.WriteLine("5. Record Event");
+        Console.WriteLine("6. Quit");
+        Console.Write(">>");
+
+        int userSelection = int.Parse(Console.ReadLine()); 
         
+        return userSelection;
+    }
+
+    public int GetScore()
+    {
+        return _score;
     }
 
     public void Load(string file)
