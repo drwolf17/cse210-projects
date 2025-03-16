@@ -59,15 +59,7 @@ public class Menu
 
             foreach (Goals goal in _goals)
             {
-                outputFile.WriteLine("");
-                List<string> items = goal.ListAttributes();
-
-                foreach (string item in items)
-                {
-                    outputFile.WriteLine(item + "~");
-                }
-
-                outputFile.Write("\b ");
+                outputFile.WriteLine(goal.SaveGoal());
             }
         }
     }
