@@ -12,7 +12,7 @@ public class Menu
     {
         Console.WriteLine($"You have {_score} points.");
         Console.WriteLine("");
-        Console.WriteLine("Menu Options:");
+        Console.WriteLine("Choose a Menu Option:");
         Console.WriteLine("----------------------");
         Console.WriteLine("1. Create New Goal");
         Console.WriteLine("2. List Goals");
@@ -29,7 +29,7 @@ public class Menu
 
     public void CreateGoal()
     {
-        Console.WriteLine("Choice of Goal:");
+        Console.WriteLine("Choose a Goal Type:");
         Console.WriteLine("----------------------");
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goal");
@@ -128,9 +128,25 @@ public class Menu
 
     public void DisplayGoals()
     {
+        int count = 1;
         foreach (Goals goal in _goals)
         {
+            Console.Write(count + ". ");
             goal.DisplayGoal();
+            count++;
         }
+    }
+
+    public void RecordEvent()
+    {
+        Console.WriteLine("Choose a Goal to Record:");
+        Console.WriteLine("----------------------");
+
+        DisplayGoals();
+
+        Console.Write(">>");
+        int goalChoice = int.Parse(Console.ReadLine()) - 1;
+
+        _score += _goals[goalChoice].RecordEvent();
     }
 }
