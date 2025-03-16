@@ -71,4 +71,12 @@ public class Menu
             }
         }
     }
+
+    public void DisplayGoals()
+    {
+        foreach (Goals goal in _goals)
+        {
+            goal.DisplayGoal();
+        }
+    }
 }
