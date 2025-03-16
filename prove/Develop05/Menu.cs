@@ -122,7 +122,7 @@ public class Menu
         Console.WriteLine("Please enter the name of the file that will be saved.");
         Console.Write(">>");
         string file = Console.ReadLine();
-        
+
         using (StreamWriter outputFile = new StreamWriter(file))
         {
             outputFile.WriteLine(_score);
@@ -147,14 +147,21 @@ public class Menu
 
     public void RecordEvent()
     {
-        Console.WriteLine("Choose a Goal to Record:");
-        Console.WriteLine("----------------------");
+        if (_goals.Count() > 0)
+        {
+            Console.WriteLine("Choose a Goal to Record:");
+            Console.WriteLine("----------------------");
 
-        DisplayGoals();
+            DisplayGoals();
 
-        Console.Write(">>");
-        int goalChoice = int.Parse(Console.ReadLine()) - 1;
-
-        _score += _goals[goalChoice].RecordEvent();
+            Console.Write(">>");
+            int goalChoice = int.Parse(Console.ReadLine()) - 1;
+            
+            _score += _goals[goalChoice].RecordEvent();
+        }
+        else 
+        {
+            Console.WriteLine("You have no goals to record.");
+        }
     }
 }
