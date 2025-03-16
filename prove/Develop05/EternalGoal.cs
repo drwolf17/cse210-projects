@@ -12,6 +12,8 @@ public class EternalGoal : Goals
         Console.Write($"[{_timesCompleted}] ");
         Console.Write($"{_goalTitle} ");
         Console.Write($"({_goalDesc})");
+
+        Console.WriteLine("");
     }
     
     public override List<string> ListAttributes()
