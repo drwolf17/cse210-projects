@@ -6,8 +6,7 @@ class Program
     {
         Menu menu = new Menu();
 
-        menu.Load("goalsTest.txt");
+        menu.Load("goalsSaveTest.txt");
         menu.DisplayGoals();
-        menu.Save("goalsSaveTest.txt");
     }
 }
