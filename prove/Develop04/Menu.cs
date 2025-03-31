@@ -9,7 +9,7 @@ public class Menu
         _isRunning = true;
     }
 
-    public bool MenuMethod()
+    public void MenuMethod()
     {
         Console.WriteLine("Menu Options:");
         Console.WriteLine("   1. Start Breathing Activity");
@@ -21,8 +21,6 @@ public class Menu
         _userChoice = int.Parse(Console.ReadLine());
 
         RunSelected();
-
-        return _isRunning;
     }
 
     public void RunSelected()
@@ -32,7 +30,7 @@ public class Menu
         Listing listing = new Listing();
 
         Console.Clear();
-        
+
         if (_userChoice == 1)
         {
             breathing.BreathingMethod();
@@ -58,5 +56,10 @@ public class Menu
         {
             Console.WriteLine("That is not a valid option.");
         }
+    }
+
+    public bool GetIsRunning()
+    {
+        return _isRunning;
     }
 }
