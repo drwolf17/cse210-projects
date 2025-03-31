@@ -57,11 +57,17 @@ public class Reflection : Mindfulness
             Console.Write("\b \b");
         }
         Console.Clear();
+
+        for (int i = 0; i < _loops; i++)
+            DisplayQuestions();
+
+        Console.WriteLine("");
+        GenericEnding();
     }
 
     public void DisplayQuestions()
     {
         Console.WriteLine(RandomString(_reflectionQuestions));
-
+        WaitAnimtion(10);
     }
 }
