@@ -6,9 +6,9 @@ class Program
     {
         Breathing breathing = new Breathing();
         Reflection reflection = new Reflection();
+        Listing listing = new Listing();
 
-        breathing.BreathingMethod();
-        reflection.ReflectionMethod();
+        listing.ListingMethod();
 
     }
 }
