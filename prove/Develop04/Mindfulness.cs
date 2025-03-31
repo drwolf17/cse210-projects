@@ -49,4 +49,14 @@ public class Mindfulness
         Console.WriteLine($"You have completed {_duration} seconds of the {_activityName} activity.");
         WaitAnimtion(5);
     }
+
+    public string RandomString(List<string> stringList)
+    {
+        Random rand = new Random();
+
+        int item = rand.Next(0, stringList.Count());
+        string randomString = stringList[item];
+
+        return randomString;
+    }
 }
