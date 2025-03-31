@@ -68,4 +68,14 @@ public class Mindfulness
         Console.WriteLine("Get ready...");
         WaitAnimtion(5);
     }
+
+    public void Countdown(int duration)
+    {
+        for (int i = duration; i > 0; i--)
+            {
+                Console.Write(i);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+    }
 }

@@ -25,20 +25,13 @@ public class Breathing : Mindfulness
     {
         Console.WriteLine("");
         Console.Write("Breath in...");
-        for (int i = 0; i < breathIn; i++)
-        {
-            Console.Write(breathIn - i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
+        
+        Countdown(breathIn);
+
         Console.WriteLine("");
         Console.Write("Breath out...");
-        for (int i = 0; i < breathOut; i++)
-        {
-            Console.Write(breathOut - i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
+        
+        Countdown(breathOut);
         
     }
 }

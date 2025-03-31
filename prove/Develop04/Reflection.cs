@@ -48,12 +48,8 @@ public class Reflection : Mindfulness
         Console.WriteLine("");
         Console.Write("You will begin in: ");
 
-        for (int i = 5; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
+        Countdown(5);
+        
         Console.Clear();
 
         for (int i = 0; i < _loops; i++)
