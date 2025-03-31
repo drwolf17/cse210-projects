@@ -32,9 +32,7 @@ public class Reflection : Mindfulness
         GenericGreeting();
         DurationPrompt();
 
-        Console.Clear();
-        Console.WriteLine("Get ready...");
-        WaitAnimtion(5);
+        GetReady();
 
         string prompt = RandomString(_reflectionPrompts);
         _loops = (int)Math.Ceiling((double) _duration / 10);

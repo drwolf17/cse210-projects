@@ -8,9 +8,7 @@ public class Breathing : Mindfulness
         GenericGreeting();
         DurationPrompt();
 
-        Console.Clear();
-        Console.WriteLine("Get ready...");
-        WaitAnimtion(5);
+        GetReady();
 
         _loops = (int)Math.Ceiling((double) _duration / 10);
 

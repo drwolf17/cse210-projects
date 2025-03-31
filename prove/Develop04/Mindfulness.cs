@@ -61,4 +61,11 @@ public class Mindfulness
 
         return randomString;
     }
+
+    public void GetReady()
+    {
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        WaitAnimtion(5);
+    }
 }
