@@ -30,14 +30,14 @@ public class Mindfulness
 
     public void WaitAnimtion(int duration)
     {
-        for (int i = 0; i < duration; i++)
+        for (int i = 0; i < duration * 2; i++)
         {
             Console.Write("+");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
 
             Console.Write("x");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
         }
     }
