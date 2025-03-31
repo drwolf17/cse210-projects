@@ -4,11 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Breathing breathing = new Breathing();
-        Reflection reflection = new Reflection();
-        Listing listing = new Listing();
+        Menu menu = new Menu();
 
-        listing.ListingMethod();
+        while (menu.GetIsRunning())
+        {
+            menu.MenuMethod();
+        }
 
     }
 }
