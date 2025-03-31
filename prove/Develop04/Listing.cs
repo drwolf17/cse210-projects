@@ -31,5 +31,30 @@ public class Listing : Mindfulness
         Console.Write("You will begin in: ");
 
         Countdown(5);
+        Console.WriteLine("");
+
+        int timesListed = ListingItems();
+
+        Console.WriteLine("");
+        Console.WriteLine($"You listed {timesListed} items!");
+        Console.WriteLine("");
+
+        GenericEnding();
+    }
+
+    public int ListingItems()
+    {
+        DateTime startTime = DateTime.Now;
+        int timesListed = 0;
+
+        while (DateTime.Now < startTime.AddSeconds(_duration))
+        {
+            Console.Write(">> ");
+            Console.ReadLine();
+
+            timesListed++;
+        }
+
+        return timesListed;
     }
 }
