@@ -25,6 +25,37 @@ public class Reflection : Mindfulness
             "How much did this experience impact your life?",
             "How did you get started?"
         ];
+    }
+
+    public void ReflectionMethod()
+    {
+        GenericGreeting();
+        DurationPrompt();
+
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        WaitAnimtion(5);
+
+        string prompt = RandomString(_reflectionPrompts);
+
+        Console.WriteLine("");
+        Console.WriteLine("Consider the following prompt:");
+        Console.WriteLine("");
+        Console.WriteLine($"  -- {prompt} --");
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.ReadLine();
+        Console.WriteLine("");
+        Console.WriteLine("Now ponder on each of the following questinos relating to the experience.");
+        Console.WriteLine("");
+        Console.Write("You will begin in: ");
+
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+
 
     }
 }
