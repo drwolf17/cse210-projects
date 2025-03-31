@@ -7,7 +7,7 @@ class Program
         Breathing breathing = new Breathing();
         Reflection reflection = new Reflection();
 
-        
+        breathing.BreathingMethod();
         reflection.ReflectionMethod();
 
     }
