@@ -46,7 +46,7 @@ public class Reflection : Mindfulness
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
         Console.WriteLine("");
-        Console.WriteLine("Now ponder on each of the following questinos relating to the experience.");
+        Console.WriteLine("Now ponder on each of the following questions relating to the experience.");
         Console.WriteLine("");
         Console.Write("You will begin in: ");
 
