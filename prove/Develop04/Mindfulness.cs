@@ -3,12 +3,14 @@ public class Mindfulness
     protected string _activityName;
     protected string _description;
     protected int _duration;
+    protected int _loops;
 
     public Mindfulness(string activity, string description)
     {
         _activityName = activity;
         _description = description;
         _duration = 0;
+        _loops = 0;
     }
 
     public void GenericGreeting()

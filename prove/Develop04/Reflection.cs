@@ -37,6 +37,7 @@ public class Reflection : Mindfulness
         WaitAnimtion(5);
 
         string prompt = RandomString(_reflectionPrompts);
+        _loops = (int)Math.Ceiling((double) _duration / 10);
 
         Console.WriteLine("");
         Console.WriteLine("Consider the following prompt:");
@@ -55,7 +56,12 @@ public class Reflection : Mindfulness
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
+        Console.Clear();
+    }
 
+    public void DisplayQuestions()
+    {
+        Console.WriteLine(RandomString(_reflectionQuestions));
 
     }
 }

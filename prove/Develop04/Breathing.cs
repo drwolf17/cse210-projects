@@ -12,9 +12,9 @@ public class Breathing : Mindfulness
         Console.WriteLine("Get ready...");
         WaitAnimtion(5);
 
-        int loops = (int)Math.Ceiling((double) _duration / 10);
+        _loops = (int)Math.Ceiling((double) _duration / 10);
 
-        for (int i = 0; i < loops; i++)
+        for (int i = 0; i < _loops; i++)
         {
             BreathInOut(5, 5);
             Console.WriteLine("");
