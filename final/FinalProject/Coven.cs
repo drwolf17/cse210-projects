@@ -1,4 +1,4 @@
 class Coven : RoleBucket
 {
-    public Coven(List<Role> roles, string alignment, int amountUnique) : base(roles, alignment, "Coven", amountUnique) {}
+    public Coven(List<Role> roles, string alignment) : base(roles, alignment, "Coven") {}
 }
