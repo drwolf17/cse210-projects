@@ -76,8 +76,5 @@ class AllRoles
         ];
     }
 
-    public List<Role> GetAllRoles()
-    {
-        return _allRoles;
-    }
+    public List<Role> allRoles { get; set; }
 }

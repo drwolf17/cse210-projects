@@ -10,5 +10,17 @@ class RoleBucket
         _roles = roles;
         _alignment = alignment;
         _faction = faction;
+        _amountUnique = 0;
+    }
+
+    public virtual void AmountUnique()
+    {
+        foreach (Role role in _roles)
+        {
+            if (role.faction == _faction & role.alignment == _alignment & role.isUnique == true)
+            {
+                _amountUnique++;
+            }
+        }
     }
 }
