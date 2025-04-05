@@ -187,6 +187,13 @@ class AllRoles
             return roleBucket;
         }
 
+        else if (listBucket == "Random Neutral")
+        {
+            Neutral roleBucket = new Neutral(_allRoles, "Any");
+            return roleBucket;
+        }
+
+
         else if (listBucket == "Neutral Evil")
         {
             Neutral roleBucket = new Neutral(_allRoles, "Evil");
