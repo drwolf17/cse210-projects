@@ -5,6 +5,7 @@ class AllRoles
     private int _confirmedCoven;
     private int _possibleTPow;
     private int _confirmedTPow;
+    private int _confirmedOtherUnique;
 
     public AllRoles()
     {
@@ -12,6 +13,7 @@ class AllRoles
         _confirmedCoven = 0;
         _possibleTPow = 0;
         _confirmedTPow = 0;
+        _confirmedOtherUnique = 0;
 
         _allRoles = 
         [
@@ -122,6 +124,14 @@ class AllRoles
         get
         {
             return _confirmedTPow;
+        }
+    }
+
+    public int ConfirmedOtherUnique
+    {
+        get
+        {
+            return _confirmedOtherUnique;
         }
     }
 
@@ -269,6 +279,11 @@ class AllRoles
                     _confirmedCoven++;
                 }
 
+                else if (confRole.IsUnique)
+                {
+                    _confirmedOtherUnique++;
+                }
+                
                 _allRoles.Find(x => x.RoleName == listBucket).AddConfirmed();
                 
                 return roleBucket;
