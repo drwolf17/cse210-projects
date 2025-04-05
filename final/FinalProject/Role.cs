@@ -5,6 +5,7 @@ class Role
     private string _roleName;
     private bool _isUnique;
     private int _timesConfirmed;
+    private int _timesPossible;
     private List<double> _probabilityList;
     private List<double> _overallProbabilities;
 
@@ -15,6 +16,7 @@ class Role
         _roleName = roleName;
         _isUnique = isUnique;
         _timesConfirmed = 0;
+        _timesPossible = 0;
     }
 
     public string Faction { get; }
@@ -27,6 +29,10 @@ class Role
     public void AddConfirmed()
     {
         _timesConfirmed++;
+    }
+    public void AddPossible()
+    {
+        _timesPossible++;
     }
 
     public void AddProbability(double probability)
