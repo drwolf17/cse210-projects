@@ -19,13 +19,43 @@ class Role
         _timesPossible = 0;
     }
 
-    public string Faction { get; }
-    public string Alignment { get; }
+    public string Faction
+    {
+        get
+        {
+            return _faction;
+        }
+    }
+    public string Alignment
+    {
+        get
+        {
+            return _alignment;
+        }
+    } 
 
-    public string RoleName { get; }
+    public string RoleName
+    {
+        get
+        {
+            return _roleName;
+        }
+    }
 
-    public bool IsUnique { get; }
-    public int TimesConfirmed { get; }
+    public bool IsUnique
+    {
+        get
+        {
+            return _isUnique;
+        }
+    }
+    public int TimesConfirmed
+    {
+        get
+        {
+            return _timesConfirmed;
+        }
+    }
     public void AddConfirmed()
     {
         _timesConfirmed++;

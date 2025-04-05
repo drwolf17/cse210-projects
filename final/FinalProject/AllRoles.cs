@@ -85,11 +85,45 @@ class AllRoles
         ];
     }
 
-    public List<Role> allRoles { get; set; }
-    public int possibleCoven { get; }
-    public int confirmedCoven { get; }
-    public int possibleTPow { get; }
-    public int confirmedTPow { get; } 
+    public List<Role> GetAllRoles
+    {
+        get
+        {
+            return _allRoles;
+        }
+        set
+        {
+            _allRoles = value;
+        }
+    }
+    public int PossibleCoven
+    {
+        get
+        {
+            return _possibleCoven;
+        }
+    }
+    public int ConfirmedCoven
+    {
+        get
+        {
+            return _confirmedCoven;
+        }
+    }
+    public int PossibleTPow
+    {
+        get
+        {
+            return _possibleTPow;
+        }
+    }
+    public int ConfirmedTPow
+    {
+        get
+        {
+            return _confirmedTPow;
+        }
+    }
 
     public RoleBucket CreateBucket(string listBucket)
     {
