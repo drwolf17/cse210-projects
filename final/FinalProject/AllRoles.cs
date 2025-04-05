@@ -85,7 +85,7 @@ class AllRoles
         ];
     }
 
-    public List<Role> GetAllRoles
+    public List<Role> Roles
     {
         get
         {
