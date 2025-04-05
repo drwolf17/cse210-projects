@@ -129,7 +129,7 @@ class AllRoles
     {
         if (listBucket == "Any")
         {
-            RoleBucket roleBucket = new RoleBucket(_allRoles, "Any");
+            RoleBucket roleBucket = new RoleBucket("Any");
             _possibleTPow++;
             _possibleCoven++;
             return roleBucket;
@@ -137,112 +137,112 @@ class AllRoles
 
         else if (listBucket == "Random Town")
         {
-            Town roleBucket = new Town(_allRoles, "Any");
+            Town roleBucket = new Town("Any");
             _possibleTPow++;
             return roleBucket;
         }
 
         else if (listBucket == "Common Town")
         {
-            Town roleBucket = new Town(_allRoles, "Common");
+            Town roleBucket = new Town("Common");
             return roleBucket;
         }
 
         else if (listBucket == "Town Investigative")
         {
-            Town roleBucket = new Town(_allRoles, "Investigative");
+            Town roleBucket = new Town("Investigative");
             return roleBucket;
         }
 
         else if (listBucket == "Town Protective")
         {
-            Town roleBucket = new Town(_allRoles, "Protective");
+            Town roleBucket = new Town("Protective");
             return roleBucket;
         }
 
         else if (listBucket == "Town Killing")
         {
-            Town roleBucket = new Town(_allRoles, "Killing");
+            Town roleBucket = new Town("Killing");
             return roleBucket;
         }
 
         else if (listBucket == "Town Support")
         {
-            Town roleBucket = new Town(_allRoles, "Support");
+            Town roleBucket = new Town("Support");
             return roleBucket;
         }
 
         else if (listBucket == "Town Power")
         {
-            Town roleBucket = new Town(_allRoles, "Power");
+            Town roleBucket = new Town("Power");
             _confirmedTPow++;
             return roleBucket;
         }
 
         else if (listBucket == "Random Coven")
         {
-            Coven roleBucket = new Coven(_allRoles, "Any");
+            Coven roleBucket = new Coven("Any");
             _confirmedCoven++;
             return roleBucket;
         }
 
         else if (listBucket == "Common Coven")
         {
-            Coven roleBucket = new Coven(_allRoles, "Common");
+            Coven roleBucket = new Coven("Common");
             _confirmedCoven++;
             return roleBucket;
         }
 
         else if (listBucket == "Coven Power")
         {
-            Coven roleBucket = new Coven(_allRoles, "Power");
+            Coven roleBucket = new Coven("Power");
             _confirmedCoven++;
             return roleBucket;
         }
 
         else if (listBucket == "Coven Killing")
         {
-            Coven roleBucket = new Coven(_allRoles, "Killing");
+            Coven roleBucket = new Coven("Killing");
             _confirmedCoven++;
             return roleBucket;
         }
 
         else if (listBucket == "Coven Deception")
         {
-            Coven roleBucket = new Coven(_allRoles, "Deception");
+            Coven roleBucket = new Coven("Deception");
             _confirmedCoven++;
             return roleBucket;
         }
 
         else if (listBucket == "Coven Utility")
         {
-            Coven roleBucket = new Coven(_allRoles, "Utiliy");
+            Coven roleBucket = new Coven("Utiliy");
             _confirmedCoven++;
             return roleBucket;
         }
 
         else if (listBucket == "Random Neutral")
         {
-            Neutral roleBucket = new Neutral(_allRoles, "Any");
+            Neutral roleBucket = new Neutral("Any");
             return roleBucket;
         }
 
 
         else if (listBucket == "Neutral Evil")
         {
-            Neutral roleBucket = new Neutral(_allRoles, "Evil");
+            Neutral roleBucket = new Neutral("Evil");
             return roleBucket;
         }
 
         else if (listBucket == "Neutral Killing")
         {
-            Neutral roleBucket = new Neutral(_allRoles, "Killing");
+            Neutral roleBucket = new Neutral("Killing");
             return roleBucket;
         }
 
         else if (listBucket == "Neutral Apocalypse")
         {
-            Neutral roleBucket = new Neutral(_allRoles, "Apocalypse");
+            Neutral roleBucket = new Neutral("Apocalypse");
             return roleBucket;
         }
 
@@ -257,7 +257,7 @@ class AllRoles
 
             else
             {
-                ConfirmedRole roleBucket = new ConfirmedRole(_allRoles, confRole.Alignment, confRole.RoleName);
+                ConfirmedRole roleBucket = new ConfirmedRole(confRole.Alignment, confRole);
 
                 if (confRole.Faction == "Town" & confRole.Alignment == "Power")
                 {
