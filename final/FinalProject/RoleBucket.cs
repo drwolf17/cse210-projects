@@ -2,14 +2,12 @@ class RoleBucket
 {
     protected List<Role> _roles;
     protected string _alignment;
-    protected string _faction;
     protected int _amountUnique;
 
-    public RoleBucket(List<Role> roles, string alignment, string faction)
+    public RoleBucket(List<Role> roles, string alignment)
     {
         _roles = roles;
         _alignment = alignment;
-        _faction = faction;
         _amountUnique = 0;
     }
 
@@ -17,7 +15,7 @@ class RoleBucket
     {
         foreach (Role role in _roles)
         {
-            if (role.faction == _faction & role.alignment == _alignment & role.isUnique == true)
+            if (role.isUnique == true)
             {
                 _amountUnique++;
             }
