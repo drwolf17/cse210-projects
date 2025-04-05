@@ -269,7 +269,7 @@ class AllRoles
             {
                 ConfirmedRole roleBucket = new ConfirmedRole(confRole.Alignment, confRole);
 
-                if (confRole.Faction == "Town" & confRole.Alignment == "Power")
+                if (confRole.Faction == "Town" &&  confRole.Alignment == "Power")
                 {
                     _confirmedTPow++;
                 }

@@ -18,7 +18,7 @@ class Town : RoleBucket
                     }
                 }
 
-                else if (_alignment == "Common" & role.Alignment != "Power")
+                else if (_alignment == "Common" && role.Alignment != "Power")
                 {
                     role.AddPossible();
                 }
