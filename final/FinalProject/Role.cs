@@ -17,13 +17,17 @@ class Role
         _timesConfirmed = 0;
     }
 
-    public string faction { get; }
-    public string alignment { get; }
+    public string Faction { get; }
+    public string Alignment { get; }
 
-    public string roleName { get; }
+    public string RoleName { get; }
 
-    public bool isUnique { get; }
-    public bool timesConfirmed { get; set; }
+    public bool IsUnique { get; }
+    public int TimesConfirmed { get; }
+    public void AddConfirmed()
+    {
+        _timesConfirmed++;
+    }
 
     public void AddProbability(double probability)
     {

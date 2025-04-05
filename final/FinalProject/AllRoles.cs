@@ -207,7 +207,7 @@ class AllRoles
 
         else
         {
-            Role confRole = _allRoles.Find(x => x.roleName == listBucket);
+            Role confRole = _allRoles.Find(x => x.RoleName == listBucket);
 
             if (confRole == null)
             {
@@ -216,17 +216,19 @@ class AllRoles
 
             else
             {
-                ConfirmedRole roleBucket = new ConfirmedRole(_allRoles, confRole.alignment, confRole.roleName);
+                ConfirmedRole roleBucket = new ConfirmedRole(_allRoles, confRole.Alignment, confRole.RoleName);
 
-                if (confRole.faction == "Town" & confRole.alignment == "Power")
+                if (confRole.Faction == "Town" & confRole.Alignment == "Power")
                 {
                     _confirmedTPow++;
                 }
 
-                else if (confRole.faction == "Coven")
+                else if (confRole.Faction == "Coven")
                 {
                     _confirmedCoven++;
                 }
+
+                _allRoles.Find(x => x.RoleName == listBucket).AddConfirmed();
                 
                 return roleBucket;
             }
