@@ -4,7 +4,7 @@ class Role
     private string _alignment;
     private string _roleName;
     private bool _isUnique;
-    private bool _confirmedRole;
+    private int _timesConfirmed;
     private List<double> _probabilityList;
     private List<double> _overallProbabilities;
 
@@ -14,7 +14,7 @@ class Role
         _alignment = alignment;
         _roleName = roleName;
         _isUnique = isUnique;
-        _confirmedRole = false;
+        _timesConfirmed = 0;
     }
 
     public string faction { get; }
@@ -23,7 +23,7 @@ class Role
     public string roleName { get; }
 
     public bool isUnique { get; }
-    public bool confirmedRole { get; set; }
+    public bool timesConfirmed { get; set; }
 
     public void AddProbability(double probability)
     {
