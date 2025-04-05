@@ -1,11 +1,12 @@
 class RoleList
 {
     private AllRoles _allRoles;
-    private List<RoleBucket> _roleBuckets;
+    private List<RoleBucket> _roleBuckets = new List<RoleBucket>();
 
     public RoleList(List<string> buckets)
     {
         _allRoles = new AllRoles();
+        _roleBuckets = [];
 
         foreach (string bucket in buckets)
         {

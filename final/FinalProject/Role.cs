@@ -6,8 +6,8 @@ class Role
     private bool _isUnique;
     private int _timesConfirmed;
     private int _timesPossible;
-    private List<double> _probabilityList;
-    private List<double> _overallProbabilities;
+    private List<double> _probabilityList = new List<double>();
+    private List<double> _overallProbabilities = new List<double>();
 
     public Role(string faction, string alignment, string roleName, bool isUnique)
     {
