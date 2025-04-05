@@ -1,29 +1,19 @@
 class RoleBucket
 {
-    protected List<Role> _roles;
     protected string _alignment;
     protected int _amountUnique;
-    protected int _possibleRolesAmount;
+    protected int _rolesInBucket;
 
-    public RoleBucket(List<Role> roles, string alignment)
+    public RoleBucket(string alignment)
     {
-        _roles = roles;
         _alignment = alignment;
         _amountUnique = 0;
-        _possibleRolesAmount = 0;
+        _rolesInBucket = 0;
     }
 
-    public List<Role> Roles
+    public virtual List<Role> CountPossible(List<Role> roles)
     {
-        get
-        {
-            return _roles;
-        }
-    }
-
-    public virtual void CountPossible()
-    {
-        foreach (Role role in _roles)
+        foreach (Role role in roles)
         {
             if (role.IsUnique == true)
             {
@@ -31,5 +21,7 @@ class RoleBucket
                 role.AddPossible();
             }
         }
+
+        return roles;
     }
 }

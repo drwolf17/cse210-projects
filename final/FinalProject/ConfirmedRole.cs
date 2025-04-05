@@ -1,20 +1,20 @@
 class ConfirmedRole : RoleBucket
 {
-    private string _roleName;
     private Role _role;
 
-    public ConfirmedRole(List<Role> roles, string alignment, string roleName) : base(roles, alignment)
+    public ConfirmedRole(string alignment, Role role) : base(alignment)
     {
-        _roleName = roleName;
-        _role = roles.Find(x => x.RoleName == _roleName);
+        _role = role;
     }
 
-    public override void CountPossible()
+    public override List<Role> CountPossible(List<Role> roles)
     {
         if (_role.IsUnique)
         {
             _amountUnique++;
-            _roles.Find(x => x.RoleName == _roleName).AddPossible();
+            roles.Find(x => x.RoleName == _role.RoleName).AddPossible();
         }
+
+        return roles;
     }
 }

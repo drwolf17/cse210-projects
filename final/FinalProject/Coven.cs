@@ -1,10 +1,10 @@
 class Coven : RoleBucket
 {
-    public Coven(List<Role> roles, string alignment) : base(roles, alignment) {}
+    public Coven(string alignment) : base(alignment) {}
 
-    public override void CountPossible()
+    public override List<Role> CountPossible(List<Role> roles)
     {
-        foreach (Role role in _roles)
+        foreach (Role role in roles)
         {
             if (role.Faction == "Coven")
             {
@@ -21,5 +21,7 @@ class Coven : RoleBucket
                 }
             }
         }
+
+        return roles;
     }
 }

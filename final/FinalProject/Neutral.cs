@@ -1,10 +1,10 @@
 class Neutral : RoleBucket
 {
-    public Neutral(List<Role> roles, string alignment) : base(roles, alignment) {}
+    public Neutral(string alignment) : base(alignment) {}
 
-    public override void CountPossible()
+    public override List<Role> CountPossible(List<Role> roles)
     {
-        foreach (Role role in _roles)
+        foreach (Role role in roles)
         {
             if (role.Faction == "Neutral")
             {
@@ -19,5 +19,7 @@ class Neutral : RoleBucket
                 }
             }
         }
+
+        return roles;
     }
 }
