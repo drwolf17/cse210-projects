@@ -13,7 +13,13 @@ class RoleBucket
         _possibleRolesAmount = 0;
     }
 
-    public List<Role> Roles { get; }
+    public List<Role> Roles
+    {
+        get
+        {
+            return _roles;
+        }
+    }
 
     public virtual void CountPossible()
     {
