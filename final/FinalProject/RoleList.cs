@@ -6,7 +6,6 @@ class RoleList
     public RoleList(List<string> buckets)
     {
         _allRoles = new AllRoles();
-        _roleBuckets = [];
 
         foreach (string bucket in buckets)
         {
@@ -21,6 +20,14 @@ class RoleList
                 Console.WriteLine("Remember to input the role/bucket as exactly seen");
                 Console.WriteLine("in game including spaces and capitalization.");
             }
+        }
+    }
+
+    public void CountForRolesAndBuckets()
+    {
+        foreach (RoleBucket roleBucket in _roleBuckets)
+        {
+            _allRoles.Roles = roleBucket.CountPossible(_allRoles.Roles);
         }
     }
 }

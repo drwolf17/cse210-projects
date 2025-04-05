@@ -6,7 +6,7 @@ class Program
     {
         List<string> buckets = 
         [
-            "Any",
+            "Crusader",
             "Town Investigative",
             "Town Investigative",
             "Town Power",
@@ -24,6 +24,8 @@ class Program
         ];
 
         RoleList roleList = new RoleList(buckets);
+
+        roleList.CountForRolesAndBuckets();
 
         Console.WriteLine("Stop");
     }
