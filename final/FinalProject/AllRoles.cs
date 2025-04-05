@@ -1,9 +1,18 @@
 class AllRoles
 {
     private List<Role> _allRoles;
+    private int _possibleCoven;
+    private int _confirmedCoven;
+    private int _possibleTPow;
+    private int _confirmedTPow;
 
     public AllRoles()
     {
+        _possibleCoven = 0;
+        _confirmedCoven = 0;
+        _possibleTPow = 0;
+        _confirmedTPow = 0;
+
         _allRoles = 
         [
             new Role("Town", "Investigative", "Coroner", false),
@@ -77,4 +86,150 @@ class AllRoles
     }
 
     public List<Role> allRoles { get; set; }
+    public int possibleCoven { get; }
+    public int confirmedCoven { get; }
+    public int possibleTPow { get; }
+    public int confirmedTPow { get; } 
+
+    public RoleBucket CreateBucket(string listBucket)
+    {
+        if (listBucket == "Any")
+        {
+            RoleBucket roleBucket = new RoleBucket(_allRoles, "Any");
+            _possibleTPow++;
+            _possibleCoven++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Random Town")
+        {
+            Town roleBucket = new Town(_allRoles, "Any");
+            _possibleTPow++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Common Town")
+        {
+            Town roleBucket = new Town(_allRoles, "Common");
+            return roleBucket;
+        }
+
+        else if (listBucket == "Town Investigative")
+        {
+            Town roleBucket = new Town(_allRoles, "Investigative");
+            return roleBucket;
+        }
+
+        else if (listBucket == "Town Protective")
+        {
+            Town roleBucket = new Town(_allRoles, "Protective");
+            return roleBucket;
+        }
+
+        else if (listBucket == "Town Killing")
+        {
+            Town roleBucket = new Town(_allRoles, "Killing");
+            return roleBucket;
+        }
+
+        else if (listBucket == "Town Support")
+        {
+            Town roleBucket = new Town(_allRoles, "Support");
+            return roleBucket;
+        }
+
+        else if (listBucket == "Town Power")
+        {
+            Town roleBucket = new Town(_allRoles, "Power");
+            _confirmedTPow++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Random Coven")
+        {
+            Coven roleBucket = new Coven(_allRoles, "Any");
+            _confirmedCoven++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Common Coven")
+        {
+            Coven roleBucket = new Coven(_allRoles, "Common");
+            _confirmedCoven++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Coven Power")
+        {
+            Coven roleBucket = new Coven(_allRoles, "Power");
+            _confirmedCoven++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Coven Killing")
+        {
+            Coven roleBucket = new Coven(_allRoles, "Killing");
+            _confirmedCoven++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Coven Deception")
+        {
+            Coven roleBucket = new Coven(_allRoles, "Deception");
+            _confirmedCoven++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Coven Utility")
+        {
+            Coven roleBucket = new Coven(_allRoles, "Utiliy");
+            _confirmedCoven++;
+            return roleBucket;
+        }
+
+        else if (listBucket == "Neutral Evil")
+        {
+            Neutral roleBucket = new Neutral(_allRoles, "Evil");
+            return roleBucket;
+        }
+
+        else if (listBucket == "Neutral Killing")
+        {
+            Neutral roleBucket = new Neutral(_allRoles, "Killing");
+            return roleBucket;
+        }
+
+        else if (listBucket == "Neutral Apocalypse")
+        {
+            Neutral roleBucket = new Neutral(_allRoles, "Apocalypse");
+            return roleBucket;
+        }
+
+        else
+        {
+            Role confRole = _allRoles.Find(x => x.roleName == listBucket);
+
+            if (confRole == null)
+            {
+                throw new Exception();
+            }
+
+            else
+            {
+                ConfirmedRole roleBucket = new ConfirmedRole(_allRoles, confRole.alignment, confRole.roleName);
+
+                if (confRole.faction == "Town" & confRole.alignment == "Power")
+                {
+                    _confirmedTPow++;
+                }
+
+                else if (confRole.faction == "Coven")
+                {
+                    _confirmedCoven++;
+                }
+                
+                return roleBucket;
+            }
+        }
+    }
 }
