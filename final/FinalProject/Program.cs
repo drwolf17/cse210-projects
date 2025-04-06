@@ -25,21 +25,11 @@ class Program
 
         List<string> allAny = 
         [
-            "Random Neutral",
-            "Random Neutral",
-            "Neutral Killing",
-            "Neutral Evil",
-            "Any",
-            "Any",
-            "Any",
-            "Any",
-            "Any",
-            "Any",
-            "Any",
-            "Any",
-            "Any",
-            "Any",
-            "Any"
+            "Random Town",
+            "Common Town",
+            "Common Town",
+            "Town Support",
+            "Town Power"
         ];
 
         RoleList roleList = new RoleList(allAny);
