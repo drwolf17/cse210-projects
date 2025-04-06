@@ -15,10 +15,12 @@ class RoleBucket
     {
         foreach (Role role in roles)
         {
+            role.AddPossible();
+            _possibleRolesInBucket++;
+
             if (role.IsUnique == true)
             {
                 _amountUnique++;
-                role.AddPossible();
             }
         }
 
@@ -27,7 +29,7 @@ class RoleBucket
 
     public virtual List<Role> AddRoleSpawnChance(AllRoles allRoles)
     {
-        _possibleRolesInBucket = 54 - 11 - allRoles.ConfirmedCoven -  2 - allRoles.ConfirmedTPow - allRoles.ConfirmedOtherUnique;
+        _possibleRolesInBucket = _possibleRolesInBucket - 11 - allRoles.ConfirmedCoven -  2 - allRoles.ConfirmedTPow - allRoles.ConfirmedOtherUnique;
 
         double baseNonUniqueChance = ((double)_possibleRolesInBucket - 1)/(double)_possibleRolesInBucket;
         foreach (Role role in allRoles.Roles)
