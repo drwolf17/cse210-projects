@@ -80,25 +80,33 @@ class Role
 
     public void CalculateSpawn()
     {
-        double x = 1;
-        double chanceSum = 0;
-        foreach (double probability in _probabilityList)
+        if (_timesConfirmed > 0)
         {
-            x *= probability;
+            _spawnProbability = 1;
         }
 
-        _spawnProbability = 1 - x;
-
-        if (_chosenChance.Count > 0)
+        else
         {
-            int y = 0;
-            foreach (double chance in _chosenChance)
+            double x = 1;
+            double chanceSum = 0;
+            foreach (double probability in _probabilityList)
             {
-                chanceSum += chance;
-                y++;
+                x *= probability;
             }
 
-            _spawnProbability *= chanceSum / y;
+            _spawnProbability = 1 - x;
+
+            if (_chosenChance.Count > 0)
+            {
+                int y = 0;
+                foreach (double chance in _chosenChance)
+                {
+                    chanceSum += chance;
+                    y++;
+                }
+
+                _spawnProbability *= chanceSum / y;
+            }
         }
     }
 
