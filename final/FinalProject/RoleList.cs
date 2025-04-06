@@ -30,4 +30,18 @@ class RoleList
             _allRoles.Roles = roleBucket.CountPossible(_allRoles.Roles);
         }
     }
+
+    public void SpawnChance()
+    {
+        foreach (RoleBucket roleBucket in _roleBuckets)
+        {
+            _allRoles.Roles = roleBucket.AddRoleSpawnChance(_allRoles);
+        }
+
+        foreach (Role role in _allRoles.Roles)
+        {
+            role.CalculateSpawn();
+            role.DisplaySpawnChance();
+        }
+    }
 }
