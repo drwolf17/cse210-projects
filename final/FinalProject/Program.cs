@@ -4,28 +4,49 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> buckets = 
+        // List<string> buckets = 
+        // [
+        //     "Crusader",
+        //     "Town Investigative",
+        //     "Town Investigative",
+        //     "Town Power",
+        //     "Town Power",
+        //     "Town Protective",
+        //     "Random Town",
+        //     "Random Town",
+        //     "Common Town",
+        //     "Common Town",
+        //     "Coven Power",
+        //     "Coven Killing",
+        //     "Common Coven",
+        //     "Random Coven",
+        //     "Random Neutral"
+        // ];
+
+        List<string> allAny = 
         [
-            "Crusader",
-            "Town Investigative",
-            "Town Investigative",
-            "Town Power",
-            "Town Power",
-            "Town Protective",
-            "Random Town",
-            "Random Town",
-            "Common Town",
-            "Common Town",
-            "Coven Power",
-            "Coven Killing",
-            "Common Coven",
-            "Random Coven",
-            "Random Neutral"
+            "Random Neutral",
+            "Random Neutral",
+            "Neutral Killing",
+            "Neutral Evil",
+            "Any",
+            "Any",
+            "Any",
+            "Any",
+            "Any",
+            "Any",
+            "Any",
+            "Any",
+            "Any",
+            "Any",
+            "Any"
         ];
 
-        RoleList roleList = new RoleList(buckets);
+        RoleList roleList = new RoleList(allAny);
 
         roleList.CountForRolesAndBuckets();
+
+        roleList.SpawnChance();
 
         Console.WriteLine("Stop");
     }
