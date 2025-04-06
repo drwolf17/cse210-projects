@@ -8,6 +8,7 @@ class Role
     private int _timesPossible;
     private double _spawnProbability;
     private List<double> _probabilityList = new List<double>();
+    private List<double> _chosenChance = new List<double>();
     private List<double> _overallProbabilities = new List<double>();
 
     public Role(string faction, string alignment, string roleName, bool isUnique)
@@ -72,19 +73,37 @@ class Role
         _probabilityList.Add(probability);
     }
 
+    public void AddChosen(double probability)
+    {
+        _chosenChance.Add(probability);
+    }
+
     public void CalculateSpawn()
     {
         double x = 1;
+        double chanceSum = 0;
         foreach (double probability in _probabilityList)
         {
             x *= probability;
         }
 
         _spawnProbability = 1 - x;
+
+        if (_chosenChance.Count > 0)
+        {
+            int y = 0;
+            foreach (double chance in _chosenChance)
+            {
+                chanceSum += chance;
+                y++;
+            }
+
+            _spawnProbability *= chanceSum / y;
+        }
     }
 
     public void DisplaySpawnChance()
     {
-        Console.WriteLine($"{_roleName}: {_spawnProbability * 100}");
+        Console.WriteLine($"{_roleName}: {Math.Round(100 * _spawnProbability, 2)}%");
     }
 }

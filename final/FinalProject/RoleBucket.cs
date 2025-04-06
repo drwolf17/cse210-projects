@@ -42,8 +42,9 @@ class RoleBucket
                 int n = 15 - allRoles.ConfirmedCoven;
                 int k = 4 - allRoles.ConfirmedCoven;
                 double chosenChance = Factorial(n - 1) / ((double)(Factorial(k - 1) * Factorial(n - 1 - (k - 1)))) /
-                    (Factorial(n)/(Factorial(k) * Factorial(n - k)));
-                role.AddProbability(baseNonUniqueChance * chosenChance);
+                    (Factorial(n) / (Factorial(k) * Factorial(n - k)));
+                role.AddProbability(baseNonUniqueChance);
+                role.AddChosen(chosenChance);
             }
 
             else if (role.Faction == "Town" && role.Alignment == "Power" && role.TimesConfirmed == 0 && allRoles.ConfirmedTPow < 3)
@@ -52,16 +53,17 @@ class RoleBucket
                 int k = 3 - allRoles.ConfirmedTPow;
                 double chosenChance = Factorial(n - 1) / ((double)(Factorial(k - 1) * Factorial(n - 1 - (k - 1)))) /
                     (Factorial(n) / (Factorial(k) * Factorial(n - k)));
-                role.AddProbability(baseNonUniqueChance * chosenChance);
+                role.AddProbability(baseNonUniqueChance);
+                role.AddChosen(chosenChance);
             }
         }
 
         return allRoles.Roles;
     }
 
-    public int Factorial(int input)
+    public double Factorial(int input)
     {
-        int output = 1;
+        double output = 1;
         if (input > 1)
         {
             for (int i = input; i > 1; i--)
