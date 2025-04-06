@@ -6,6 +6,7 @@ class Role
     private bool _isUnique;
     private int _timesConfirmed;
     private int _timesPossible;
+    private double _spawnProbability;
     private List<double> _probabilityList = new List<double>();
     private List<double> _overallProbabilities = new List<double>();
 
@@ -17,6 +18,7 @@ class Role
         _isUnique = isUnique;
         _timesConfirmed = 0;
         _timesPossible = 0;
+        _spawnProbability = 0;
     }
 
     public string Faction
@@ -68,5 +70,21 @@ class Role
     public void AddProbability(double probability)
     {
         _probabilityList.Add(probability);
+    }
+
+    public void CalculateSpawn()
+    {
+        double x = 1;
+        foreach (double probability in _probabilityList)
+        {
+            x *= probability;
+        }
+
+        _spawnProbability = 1 - x;
+    }
+
+    public void DisplaySpawnChance()
+    {
+        Console.WriteLine($"{_roleName}: {_spawnProbability * 100}");
     }
 }
