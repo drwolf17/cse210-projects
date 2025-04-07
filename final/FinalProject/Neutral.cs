@@ -36,7 +36,7 @@ class Neutral : RoleBucket
         double baseNonUniqueChance = ((double)_possibleRolesInBucket - 1)/(double)_possibleRolesInBucket;
         foreach (Role role in allRoles.Roles)
         {
-            if (role.Faction == "Neutral" && (role.Alignment == _alignment || role.Alignment == "Any") && (role.IsUnique == false || (role.IsUnique && role.TimesConfirmed == 0)))
+            if (role.Faction == "Neutral" && (role.Alignment == _alignment || _alignment == "Any") && (role.IsUnique == false || (role.IsUnique && role.TimesConfirmed == 0)))
             {
                 role.AddProbability(baseNonUniqueChance);
             }
