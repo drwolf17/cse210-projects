@@ -1,6 +1,7 @@
 This program converts a role list from the game Town of Salem 2 into a list of probabilities of each
 role appearing. To use it you take a txt file that includes the list with each option also known as 
-role bucket on a seperate line, making sure they are appear exactly as shown in game. Some examples are included.
+role bucket on a seperate line, making sure they are appear exactly as shown in game. AllAny.txt and
+Season4Ranked.txt are included as samples to use.
 
 The role buckets are:
     Any
