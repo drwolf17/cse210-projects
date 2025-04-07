@@ -1,7 +1,6 @@
 class AllRoles
 {
     private List<Role> _allRoles;
-    private int _possibleCoven;
     private int _confirmedCoven;
     private int _confirmedTPow;
     private int _confirmedOtherUnique;
