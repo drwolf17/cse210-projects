@@ -10,13 +10,7 @@ class Neutral : RoleBucket
             {
                 if (_alignment == "Any" || _alignment == role.Alignment)
                 {
-                    role.AddPossible();
                     _possibleRolesInBucket++;
-                    
-                    if (role.IsUnique == true)
-                    {
-                        _amountUnique++;
-                    }
                 }
             }
         }

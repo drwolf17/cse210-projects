@@ -10,15 +10,11 @@ class Coven : RoleBucket
             {
                 if (_alignment == "Any" || _alignment == role.Alignment)
                 {
-                    _amountUnique++;
-                    role.AddPossible();
                     _possibleRolesInBucket++;
                 }
 
                 else if (_alignment == "Common" && role.Alignment != "Power" && role.Alignment != "Killing")
                 {
-                    _amountUnique++;
-                    role.AddPossible();
                     _possibleRolesInBucket++;
                 }
             }

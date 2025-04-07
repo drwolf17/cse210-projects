@@ -10,18 +10,11 @@ class Town : RoleBucket
             {
                 if (_alignment == "Any" || _alignment == role.Alignment)
                 {
-                    role.AddPossible();
                     _possibleRolesInBucket++;
-                    
-                    if (role.IsUnique == true)
-                    {
-                        _amountUnique++;
-                    }
                 }
 
                 else if (_alignment == "Common" && role.Alignment != "Power")
                 {
-                    role.AddPossible();
                     _possibleRolesInBucket++;
                 }
             }

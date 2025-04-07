@@ -5,11 +5,9 @@ class Role
     private string _roleName;
     private bool _isUnique;
     private int _timesConfirmed;
-    private int _timesPossible;
     private double _spawnProbability;
     private List<double> _probabilityList = new List<double>();
     private List<double> _chosenChance = new List<double>();
-    private List<double> _overallProbabilities = new List<double>();
 
     public Role(string faction, string alignment, string roleName, bool isUnique)
     {
@@ -18,7 +16,6 @@ class Role
         _roleName = roleName;
         _isUnique = isUnique;
         _timesConfirmed = 0;
-        _timesPossible = 0;
         _spawnProbability = 0;
     }
 
@@ -62,10 +59,6 @@ class Role
     public void AddConfirmed()
     {
         _timesConfirmed++;
-    }
-    public void AddPossible()
-    {
-        _timesPossible++;
     }
 
     public void AddProbability(double probability)

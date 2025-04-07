@@ -1,13 +1,11 @@
 class RoleBucket
 {
     protected string _alignment;
-    protected int _amountUnique;
     protected int _possibleRolesInBucket;
 
     public RoleBucket(string alignment)
     {
         _alignment = alignment;
-        _amountUnique = 0;
         _possibleRolesInBucket = 0;
     }
 
@@ -15,13 +13,7 @@ class RoleBucket
     {
         foreach (Role role in roles)
         {
-            role.AddPossible();
             _possibleRolesInBucket++;
-
-            if (role.IsUnique == true)
-            {
-                _amountUnique++;
-            }
         }
 
         return roles;
