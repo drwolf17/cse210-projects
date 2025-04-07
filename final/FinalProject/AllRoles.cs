@@ -3,15 +3,12 @@ class AllRoles
     private List<Role> _allRoles;
     private int _possibleCoven;
     private int _confirmedCoven;
-    private int _possibleTPow;
     private int _confirmedTPow;
     private int _confirmedOtherUnique;
 
     public AllRoles()
     {
-        _possibleCoven = 0;
         _confirmedCoven = 0;
-        _possibleTPow = 0;
         _confirmedTPow = 0;
         _confirmedOtherUnique = 0;
 
@@ -98,25 +95,11 @@ class AllRoles
             _allRoles = value;
         }
     }
-    public int PossibleCoven
-    {
-        get
-        {
-            return _possibleCoven;
-        }
-    }
     public int ConfirmedCoven
     {
         get
         {
             return _confirmedCoven;
-        }
-    }
-    public int PossibleTPow
-    {
-        get
-        {
-            return _possibleTPow;
         }
     }
     public int ConfirmedTPow
@@ -140,15 +123,12 @@ class AllRoles
         if (listBucket == "Any")
         {
             RoleBucket roleBucket = new RoleBucket("Any");
-            _possibleTPow++;
-            _possibleCoven++;
             return roleBucket;
         }
 
         else if (listBucket == "Random Town")
         {
             Town roleBucket = new Town("Any");
-            _possibleTPow++;
             return roleBucket;
         }
 
