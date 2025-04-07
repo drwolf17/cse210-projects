@@ -17,4 +17,9 @@ class ConfirmedRole : RoleBucket
 
         return roles;
     }
+
+    public override List<Role> AddRoleSpawnChance(AllRoles allRoles)
+    {
+        return allRoles.Roles;
+    }
 }
